@@ -171,6 +171,7 @@ class RtUsb9axisimuDriverForROS : public SerialPort
         double magnetic_field_cov      = magnetic_field_stddev_ * magnetic_field_stddev_;
 
         //imu_data_raw_msg has no orientation values
+        imu_data_raw_msg.orientation.x = 1;
         imu_data_raw_msg.orientation_covariance[0] = -1;
 
         imu_data_raw_msg.linear_acceleration_covariance[0] =
